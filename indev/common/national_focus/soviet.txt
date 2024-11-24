@@ -1,0 +1,108 @@
+﻿### search_filters = {FOCUS_FILTER_POLITICAL}
+### search_filters = {FOCUS_FILTER_RESEARCH}
+### search_filters = {FOCUS_FILTER_INDUSTRY}
+### search_filters = {FOCUS_FILTER_STABILITY}
+### search_filters = {FOCUS_FILTER_WAR_SUPPORT}
+### search_filters = {FOCUS_FILTER_MANPOWER}
+### search_filters = {FOCUS_FILTER_ANNEXATION}
+### search_filters = {FOCUS_FILTER_SOV_POLITICAL_PARANOIA}
+### search_filters = {FOCUS_FILTER_PROPAGANDA}
+### search_filters = {FOCUS_FILTER_ARMY_XP}
+### search_filters = {FOCUS_FILTER_NAVY_XP}
+### search_filters = {FOCUS_FILTER_AIR_XP}
+# Reminder that focus filters prio has to be handled in the generic focus file :)
+
+focus_tree = {
+	id = soviet_focus
+
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = SOV
+		}
+	}
+	
+	default = no
+
+	continuous_focus_position = { x = 55 y = 1500 }
+
+
+	focus = {
+		id = SOV_the_victorious_east
+		icon = GFX_focus_SOV_the_victorious_east
+		#prerequisite = { focus = SOV_romanov_reconstruction focus = SOV_dismantle_the_zemsky_sobor }
+		x = -3
+		y = 1
+		#relative_position_id = SOV_dismantle_the_zemsky_sobor
+		cost = 4.4
+		ai_will_do = {
+			factor = 1
+		}
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+
+		completion_reward = {
+			add_political_power = 100
+			}		
+		}
+		
+	focus = {
+		id = SOV_the_first_revision_of_lenins_economy
+		icon = focus_SOV_the_first_revision_of_lenins_economy.dds
+		prerequisite = { focus = SOV_the_victorious_east }
+		x = 0
+		y = 1
+		relative_position_id = SOV_the_victorious_east
+		cost = 4.4
+		ai_will_do = {
+			factor = 1
+		}
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+
+		completion_reward = {
+			add_political_power = 25
+			}		
+		}
+    focus = {
+		id = SOV_the_second_revision_of_lenins_economy
+		icon = focus_SOV_the_second_revision_of_lenins_economy.dds
+		prerequisite = { focus = SOV_the_first_revision_of_lenins_economy }
+		x = 0
+		y = 1
+		relative_position_id = SOV_the_first_revision_of_lenins_economy
+		cost = 4.4
+		ai_will_do = {
+			factor = 1
+		}
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+
+		completion_reward = {
+			add_political_power = 25
+			}		
+		}
+    focus = {
+		id = SOV_the_leadership_question
+		icon = GFX_focus_generic_attack_mongolia
+		prerequisite = { focus = SOV_the_second_revision_of_lenins_economy )
+		x = 0
+		y = 3
+		relative_position_id = SOV_the_first_revision_of_lenins_economy
+		cost = 4.4
+		ai_will_do = {
+			factor = 1
+		}
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+
+		completion_reward = {
+			add_political_power = 25
+			}		
+		}
